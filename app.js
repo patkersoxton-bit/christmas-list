@@ -6,7 +6,8 @@
   const TOKENS_KEY = "xmas-claim-tokens";      // { itemId: token } — your own claims
   const DEMO_KEY = "xmas-demo-claims";         // demo mode only
 
-  const state = { items: [], claimed: new Set(), filter: "available" };
+  const state = { items: [], claimed: new Set(), filter: "all" };
+  const NAME_KEY = "xmas-claimer-name";
   const $ = (sel) => document.querySelector(sel);
 
   // ---------- Local storage helpers ----------
@@ -36,11 +37,11 @@
 
   const backend = LIVE ? {
     async list() { return rpc("get_claimed_items"); },
-    async claim(id) { return rpc("claim_item", { p_item_id: id }); },
+    async claim(id, name) { return rpc("claim_item", { p_item_id: id, p_name: name }); },
     async unclaim(id, token) { return rpc("unclaim_item", { p_item_id: id, p_token: token }); },
   } : {
     async list() { return Object.keys(readJSON(DEMO_KEY, {})); },
-    async claim(id) {
+    async claim(id, _name) {
       const all = readJSON(DEMO_KEY, {});
       if (all[id]) return null;
       const token = crypto.randomUUID();
@@ -83,7 +84,7 @@
       action = `<span class="status mine">✓ You're getting this</span>
                 <button class="btn btn-ghost" data-unclaim="${esc(item.id)}">Undo</button>`;
     } else if (taken) {
-      action = `<span class="status taken">Someone's got this one</span>`;
+      action = `<span class="claimed-pill">✓ Claimed</span>`;
     } else {
       action = `<button class="btn btn-primary" data-claim="${esc(item.id)}">I'll get this</button>`;
     }
@@ -138,14 +139,21 @@
     el.classList.toggle("error", isError);
   }
 
+  // Resolves to the claimer's name, or null if cancelled.
   function confirmClaim(item) {
     return new Promise((resolve) => {
       const dlg = $("#confirm");
+      const input = $("#claimer-name");
       $("#confirm-title").textContent = `Claim “${item.name}”?`;
       $("#confirm-body").textContent = item.price ? `Approx. ${item.price}.` : "";
+      input.value = localStorage.getItem(NAME_KEY) || "";
       dlg.returnValue = "";
-      dlg.addEventListener("close", () => resolve(dlg.returnValue === "ok"), { once: true });
+      dlg.addEventListener("close", () => {
+        const name = input.value.trim();
+        resolve(dlg.returnValue === "ok" && name ? name : null);
+      }, { once: true });
       dlg.showModal();
+      if (!input.value) input.focus();
     });
   }
 
@@ -164,14 +172,17 @@
   // ---------- Actions ----------
   async function onClaim(id, btn) {
     const item = state.items.find((i) => i.id === id);
-    if (!item || !(await confirmClaim(item))) return;
+    if (!item) return;
+    const name = await confirmClaim(item);
+    if (!name) return;
+    try { localStorage.setItem(NAME_KEY, name); } catch {}
     btn.disabled = true;
     try {
-      const token = await backend.claim(id);
+      const token = await backend.claim(id, name);
       if (token) {
         writeJSON(TOKENS_KEY, { ...myTokens(), [id]: token });
         state.claimed.add(id);
-        toast("Claimed! It's now hidden from everyone else. 🎁");
+        toast(`Thanks, ${name}! It's now marked as claimed. 🎁`);
       } else {
         state.claimed.add(id);
         toast("Ah, someone just claimed that one. Pick another?");

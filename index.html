@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Christmas List</title>
-  <meta name="description" content="A Christmas gift list. Claim a gift anonymously so nobody doubles up.">
+  <meta name="description" content="A Christmas gift list. Claim a gift so nobody doubles up.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎄</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,13 +25,13 @@
     <section class="how" aria-label="How it works">
       <div><b>1</b><span>Browse the list</span></div>
       <div><b>2</b><span>Tap <strong>I'll get this</strong></span></div>
-      <div><b>3</b><span>It's marked taken for everyone, anonymously</span></div>
+      <div><b>3</b><span>It's greyed out for everyone else. Your name stays private</span></div>
     </section>
 
     <div class="toolbar">
       <div class="filters" role="tablist" aria-label="Filter items">
-        <button class="chip is-active" data-filter="available" role="tab" aria-selected="true">Available</button>
-        <button class="chip" data-filter="all" role="tab" aria-selected="false">All</button>
+        <button class="chip is-active" data-filter="all" role="tab" aria-selected="true">All gifts</button>
+        <button class="chip" data-filter="available" role="tab" aria-selected="false">Still available</button>
         <button class="chip" data-filter="mine" role="tab" aria-selected="false">My claims</button>
       </div>
       <p class="count" id="count" aria-live="polite"></p>
@@ -43,7 +43,7 @@
   </main>
 
   <footer class="footer">
-    <p>Claims are anonymous. Only "taken / not taken" is stored, never who.</p>
+    <p>Other visitors only see that a gift is claimed, never who claimed it.</p>
     <p>Changed your mind? Use <em>Undo</em> on the same device you claimed from.</p>
   </footer>
 
@@ -51,9 +51,13 @@
     <form method="dialog">
       <h2 id="confirm-title">Claim this gift?</h2>
       <p id="confirm-body"></p>
-      <p class="fine">It'll be marked as taken for everyone. Nobody (including the list owner) will see it was you.</p>
+      <label class="field">
+        <span>Your name</span>
+        <input id="claimer-name" name="claimer" type="text" maxlength="60" autocomplete="name" required placeholder="e.g. Aunt Sue">
+      </label>
+      <p class="fine">Everyone else just sees "Claimed". Your name is only kept so the list organizer can keep track.</p>
       <menu>
-        <button value="cancel" class="btn btn-ghost">Cancel</button>
+        <button value="cancel" class="btn btn-ghost" formnovalidate>Cancel</button>
         <button value="ok" class="btn btn-primary" id="confirm-ok">Yes, I'll get it</button>
       </menu>
     </form>

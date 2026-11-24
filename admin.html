@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Christmas List · Organizer</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎄</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <header class="hero hero-slim">
+    <p class="eyebrow">Organizer view</p>
+    <h1>Who's claimed what</h1>
+    <p class="subtitle">Spoiler warning: this page shows the names behind every claim.</p>
+  </header>
+
+  <main class="container">
+    <div id="banner" class="banner" hidden></div>
+
+    <form id="login" class="panel login">
+      <label class="field">
+        <span>Organizer passphrase</span>
+        <input id="key" type="password" autocomplete="current-password" required>
+      </label>
+      <label class="check"><input type="checkbox" id="remember" checked> Remember on this device</label>
+      <button class="btn btn-primary" type="submit">Show claims</button>
+    </form>
+
+    <section id="dash" hidden>
+      <div class="stats" id="stats"></div>
+
+      <div class="toolbar">
+        <div class="filters">
+          <button class="chip is-active" data-view="people">By person</button>
+          <button class="chip" data-view="items">By gift</button>
+        </div>
+        <div class="toolbar-actions">
+          <button class="btn btn-ghost" id="refresh" type="button">Refresh</button>
+          <button class="btn btn-ghost" id="logout" type="button">Lock</button>
+        </div>
+      </div>
+
+      <div id="view"></div>
+    </section>
+
+    <p class="back"><a href="./">← Back to the list</a></p>
+  </main>
+
+  <div id="toast" class="toast" role="status" hidden></div>
+
+  <script src="config.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

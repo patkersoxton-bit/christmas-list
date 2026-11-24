@@ -1,8 +1,9 @@
 # 🎄 Christmas List
 
-A small, anonymous gift registry hosted on GitHub Pages. Visitors can see the
-list, click **I'll get this**, and the item is marked as taken for everyone.
-No names are stored anywhere, not even for the list owner.
+A small gift registry hosted on GitHub Pages. Visitors see the whole list,
+click **I'll get this**, enter their name, and the item is greyed out as
+claimed for everyone. Other visitors never see *who* claimed something. Only
+the organizer page shows names.
 
 ## Files
 
@@ -12,6 +13,7 @@ No names are stored anywhere, not even for the list owner.
 | `config.js` | Page title, subtitle, and Supabase connection settings. |
 | `styles.css` | All styling. The theme colors and fonts are CSS variables at the top. |
 | `app.js` | Page logic (rendering, claiming, undo). |
+| `admin.html`, `admin.js`, `admin.css` | Passphrase-protected organizer page: who claimed what. |
 | `supabase/schema.sql` | Database setup for shared claims. |
 
 ## Adding items
@@ -41,13 +43,19 @@ Each item in `items.json` looks like this:
 - `image`: optional. Leave it empty for a 🎁 placeholder.
 - `"hidden": true`: optionally hide an item without deleting it.
 
-## How claiming stays anonymous
+## Who can see what
 
-- The database stores only `item_id` and `claimed_at`.
-- When someone claims an item, their browser gets a random secret token. Only
-  that browser can **Undo** the claim. Nobody else can.
-- Visitors can't read the table directly. They can only call three narrow
-  functions (`get_claimed_items`, `claim_item`, `unclaim_item`).
+- **Visitors** see every item. Claimed ones are greyed out with a "Claimed"
+  label, and names are never sent to their browser.
+- **The claimer** sees "You're getting this" and can **Undo** from the same
+  device. A random secret token, kept in their browser, proves it's their claim.
+- **The organizer** opens `admin.html` (e.g.
+  `https://<username>.github.io/christmas-list/admin.html`), enters the
+  passphrase, and sees claims **by person** or **by gift**, with a
+  **Release** button to put an item back on the list. The page isn't linked
+  from the main list and asks search engines not to index it.
+- The passphrase is never stored in this repo. Only its SHA-256 hash is kept,
+  in the database. To change it, see the comment in `supabase/schema.sql`.
 
 ## Setup
 
@@ -58,9 +66,8 @@ connected in `config.js`. The key in that file is the *publishable* key,
 which is meant to be public. With this schema it can only call the three
 functions above. It cannot read or edit the table.
 
-- To see or reset claims, open the Supabase dashboard, go to the
-  christmas-list project, then **Table Editor → claims**, and delete a row
-  to free that item up again.
+- To see or reset claims, use the organizer page (`admin.html`), or the
+  Supabase dashboard: christmas-list project, then **Table Editor → claims**.
 - Free-tier projects pause after about a week without visits. If the site
   says it can't load which gifts are taken, restore the project from the
   dashboard.

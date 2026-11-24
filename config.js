@@ -9,7 +9,7 @@
 window.LIST_CONFIG = {
   ownerName: "Parker",      // shows as "Parker's Christmas List"
   title: "Parker's Christmas List",
-  subtitle: "Pick something, claim it, and it disappears for everyone else. No names are ever recorded.",
+  subtitle: "Pick something, claim it, and it's greyed out for everyone else so nobody doubles up.",
   year: 2026,
   SUPABASE_URL: "https://dmajaqiwwopadwhquhrx.supabase.co",
   SUPABASE_ANON_KEY: "sb_publishable_p8jaCa6e0Uc7gN0v0p7K5Q_Rb3Zl8UU",

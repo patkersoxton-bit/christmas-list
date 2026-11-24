@@ -18,6 +18,7 @@
 }
 
 * { box-sizing: border-box; }
+[hidden] { display: none !important; }
 html { -webkit-text-size-adjust: 100%; }
 body {
   margin: 0;
@@ -139,17 +140,20 @@ button { font: inherit; cursor: pointer; }
 .status.taken { color: var(--taken); }
 .status.mine { color: var(--primary); }
 
-.card.is-taken { opacity: .6; }
+.card.is-taken { opacity: .55; box-shadow: none; background: #f3efe8; }
+.card.is-taken:hover { transform: none; }
+.card.is-taken h3 { color: var(--muted); }
 .card.is-taken .card-img { filter: grayscale(1); }
 .card.is-taken::after {
-  content: "Taken";
+  content: "Claimed";
   position: absolute; top: 14px; right: -34px; transform: rotate(35deg);
   background: var(--taken); color: #fff; font-size: .75rem; font-weight: 700;
   letter-spacing: .1em; text-transform: uppercase; padding: .25rem 2.5rem;
 }
 .card.is-mine { border-color: var(--primary); }
 .card.is-mine::after { content: "Yours"; background: var(--primary); }
-.card.is-mine { opacity: 1; }
+.card.is-mine { opacity: 1; background: var(--surface); box-shadow: var(--shadow); }
+.card.is-mine h3 { color: var(--ink); }
 .card.is-mine .card-img { filter: none; }
 
 .empty {
@@ -201,4 +205,16 @@ button { font: inherit; cursor: pointer; }
 @media (prefers-reduced-motion: reduce) {
   .snow { animation: none; }
   .card { transition: none; }
+}
+
+/* ===== Form fields ===== */
+.field { display: grid; gap: .35rem; margin: 1rem 0 .25rem; font-weight: 600; font-size: .9rem; }
+.field input {
+  font: 16px var(--font-body); padding: .65rem .8rem; border-radius: 10px;
+  border: 1px solid var(--line); background: #fff; color: var(--ink);
+}
+.field input:focus { outline: 2px solid var(--primary); outline-offset: 1px; border-color: var(--primary); }
+.claimed-pill {
+  flex: 1; text-align: center; padding: .65rem 1rem; border-radius: 10px;
+  background: #e4e1dc; color: #7d817e; font-weight: 600;
 }
