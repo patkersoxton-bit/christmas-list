@@ -15,19 +15,19 @@
     "image": "images/dji-osmo-action-4.webp"
   },
   {
-    "id": "lenovo-legion-armored-backpack",
-    "name": "Lenovo Legion Armored Backpack",
-    "description": "Laptop backpack from Lenovo's Legion gaming line.",
+    "id": "tomtoc-navigator-t71-backpack",
+    "name": "tomtoc Navigator-T71 Laptop Backpack (24L)",
+    "description": "Water-resistant 24L laptop backpack for work and travel. Black, as pictured. Please get the exact model in the link.",
     "price": "",
     "category": "Bags",
     "priority": "normal",
     "links": [
       {
         "store": "Amazon",
-        "url": "https://www.amazon.com/dp/B07VVRZ7ZB?th=1"
+        "url": "https://www.amazon.com/dp/B0FMQSM5X5?th=1"
       }
     ],
-    "image": "images/lenovo-legion-armored-backpack.webp"
+    "image": "images/tomtoc-navigator-t71-backpack.webp"
   },
   {
     "id": "ugreen-kvm-switch",
