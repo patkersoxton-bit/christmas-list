@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Christmas List</title>
+  <meta name="description" content="A Christmas gift list. Claim a gift anonymously so nobody doubles up.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎄</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="snow" aria-hidden="true"></div>
+    <p class="eyebrow" id="eyebrow">Christmas</p>
+    <h1 id="title">Christmas List</h1>
+    <p class="subtitle" id="subtitle"></p>
+  </header>
+
+  <main class="container">
+    <div id="banner" class="banner" hidden></div>
+
+    <section class="how" aria-label="How it works">
+      <div><b>1</b><span>Browse the list</span></div>
+      <div><b>2</b><span>Tap <strong>I'll get this</strong></span></div>
+      <div><b>3</b><span>It's marked taken for everyone, anonymously</span></div>
+    </section>
+
+    <div class="toolbar">
+      <div class="filters" role="tablist" aria-label="Filter items">
+        <button class="chip is-active" data-filter="available" role="tab" aria-selected="true">Available</button>
+        <button class="chip" data-filter="all" role="tab" aria-selected="false">All</button>
+        <button class="chip" data-filter="mine" role="tab" aria-selected="false">My claims</button>
+      </div>
+      <p class="count" id="count" aria-live="polite"></p>
+    </div>
+
+    <div id="list" class="grid" aria-live="polite">
+      <p class="empty">Loading the list…</p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>Claims are anonymous. Only "taken / not taken" is stored, never who.</p>
+    <p>Changed your mind? Use <em>Undo</em> on the same device you claimed from.</p>
+  </footer>
+
+  <dialog id="confirm" class="dialog">
+    <form method="dialog">
+      <h2 id="confirm-title">Claim this gift?</h2>
+      <p id="confirm-body"></p>
+      <p class="fine">It'll be marked as taken for everyone. Nobody (including the list owner) will see it was you.</p>
+      <menu>
+        <button value="cancel" class="btn btn-ghost">Cancel</button>
+        <button value="ok" class="btn btn-primary" id="confirm-ok">Yes, I'll get it</button>
+      </menu>
+    </form>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" hidden></div>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "wool-socks",
+    "name": "Merino Wool Socks",
+    "description": "Cushioned crew socks, size L. Any neutral color.",
+    "price": "$25",
+    "category": "Clothing",
+    "priority": "normal",
+    "links": [
+      { "store": "Darn Tough", "url": "https://darntough.com/" }
+    ],
+    "image": ""
+  },
+  {
+    "id": "coffee-beans",
+    "name": "Whole Bean Coffee",
+    "description": "Medium or dark roast, 12 oz bag. Whole bean, not ground.",
+    "price": "$18",
+    "category": "Food & Drink",
+    "priority": "normal",
+    "links": [
+      { "store": "Amazon", "url": "https://www.amazon.com/s?k=whole+bean+coffee+medium+roast" }
+    ],
+    "image": ""
+  },
+  {
+    "id": "paperback-book",
+    "name": "A Good Novel",
+    "description": "Placeholder: swap in a specific title and link.",
+    "price": "$15–20",
+    "category": "Books",
+    "priority": "high",
+    "links": [
+      { "store": "Bookshop.org", "url": "https://bookshop.org/" }
+    ],
+    "image": ""
+  }
+]
