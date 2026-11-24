@@ -80,6 +80,11 @@ functions above. It cannot read or edit the table.
    `main` and `/ (root)`.
 3. The site will be live at `https://<username>.github.io/christmas-list/`.
 
+### After changing CSS or JS
+
+Bump the `?v=` number on the `<link>`/`<script>` tags in `index.html` and
+`admin.html`, so visitors' browsers fetch the new files instead of cached copies.
+
 ### Preview locally
 
 ```bash

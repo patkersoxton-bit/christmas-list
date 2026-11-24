@@ -31,7 +31,11 @@
       },
       body: JSON.stringify(args),
     });
-    if (!res.ok) throw new Error(`${fn} failed (${res.status})`);
+    if (!res.ok) {
+      const err = new Error(`${fn} failed (${res.status})`);
+      err.status = res.status;
+      throw err;
+    }
     return res.json();
   }
 
@@ -189,7 +193,9 @@
       }
     } catch (err) {
       console.error(err);
-      toast("Couldn't reach the list. Please try again.");
+      toast(err.status === 404
+        ? "This page is out of date. Please refresh and try again."
+        : "Couldn't reach the list. Please try again.");
     }
     render();
   }
