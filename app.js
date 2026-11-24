@@ -23,7 +23,10 @@
       headers: {
         "Content-Type": "application/json",
         apikey: cfg.SUPABASE_ANON_KEY,
-        Authorization: `Bearer ${cfg.SUPABASE_ANON_KEY}`,
+        // Legacy anon keys are JWTs and also go in Authorization;
+        // new sb_publishable_ keys must only be sent as apikey.
+        ...(cfg.SUPABASE_ANON_KEY.startsWith("eyJ")
+          ? { Authorization: `Bearer ${cfg.SUPABASE_ANON_KEY}` } : {}),
       },
       body: JSON.stringify(args),
     });

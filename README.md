@@ -51,20 +51,20 @@ Each item in `items.json` looks like this:
 
 ## Setup
 
-### 1. Shared claims (Supabase, free tier)
+### 1. Shared claims (Supabase): done
 
-Without this the site runs in **demo mode**, where claims are saved only in
-your own browser.
+Claims are stored in the Supabase project **christmas-list**, already
+connected in `config.js`. The key in that file is the *publishable* key,
+which is meant to be public. With this schema it can only call the three
+functions above. It cannot read or edit the table.
 
-1. Create a free project at [supabase.com](https://supabase.com).
-2. Open **SQL Editor**, paste in the contents of `supabase/schema.sql`, and run it.
-3. Go to **Project Settings → API** and copy the **Project URL** and the
-   **anon / publishable key** into `config.js`.
-
-The anon key is meant to be public. With this schema it can only call the
-three functions above.
-
-To reset a claim yourself, delete its row in **Table Editor → claims**.
+- To see or reset claims, open the Supabase dashboard, go to the
+  christmas-list project, then **Table Editor → claims**, and delete a row
+  to free that item up again.
+- Free-tier projects pause after about a week without visits. If the site
+  says it can't load which gifts are taken, restore the project from the
+  dashboard.
+- To rebuild from scratch, run `supabase/schema.sql` in the SQL Editor.
 
 ### 2. Publish with GitHub Pages
 

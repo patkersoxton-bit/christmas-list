@@ -11,6 +11,6 @@ window.LIST_CONFIG = {
   title: "Parker's Christmas List",
   subtitle: "Pick something, claim it, and it disappears for everyone else. No names are ever recorded.",
   year: 2026,
-  SUPABASE_URL: "",
-  SUPABASE_ANON_KEY: "",
+  SUPABASE_URL: "https://dmajaqiwwopadwhquhrx.supabase.co",
+  SUPABASE_ANON_KEY: "sb_publishable_p8jaCa6e0Uc7gN0v0p7K5Q_Rb3Zl8UU",
 };
