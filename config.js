@@ -7,8 +7,8 @@
 // The anon key is designed to be public — it only allows calling the three
 // functions defined in supabase/schema.sql, nothing else.
 window.LIST_CONFIG = {
-  ownerName: "",            // e.g. "Alex" → shows as "Alex's Christmas List"
-  title: "My Christmas List",
+  ownerName: "Parker",      // shows as "Parker's Christmas List"
+  title: "Parker's Christmas List",
   subtitle: "Pick something, claim it, and it disappears for everyone else. No names are ever recorded.",
   year: 2026,
   SUPABASE_URL: "",
