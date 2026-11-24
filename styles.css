@@ -107,8 +107,9 @@ button { font: inherit; cursor: pointer; }
   overflow: hidden; transition: transform .15s ease, opacity .2s ease;
 }
 .card:hover { transform: translateY(-2px); }
-.card-img { aspect-ratio: 4 / 3; background: #efe7da; }
-.card-img img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.card-img { position: relative; aspect-ratio: 4 / 3; background: #fff; overflow: hidden; border-bottom: 1px solid var(--line); }
+.card-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; padding: 1rem; display: block; }
+.card-img.placeholder { background: #efe7da; }
 .card-img.placeholder { display: grid; place-items: center; font-size: 3rem; }
 .card-body { padding: 1rem 1.1rem 1.1rem; display: flex; flex-direction: column; gap: .5rem; flex: 1; }
 .meta { display: flex; gap: .4rem; flex-wrap: wrap; align-items: center; }

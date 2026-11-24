@@ -40,7 +40,7 @@ Each item in `items.json` looks like this:
   after people start claiming**, because claims are tied to the id.
 - `priority`: `"high"` shows a ★ Top pick badge. Anything else is normal.
 - `links`: one or more exact purchase links. Each becomes a "Buy at …" button.
-- `image`: optional. Leave it empty for a 🎁 placeholder.
+- `image`: optional. Either a full image URL or a file in `images/` (e.g. `"images/wool-socks.webp"`). Leave it empty for a 🎁 placeholder.
 - `"hidden": true`: optionally hide an item without deleting it.
 
 ## Who can see what

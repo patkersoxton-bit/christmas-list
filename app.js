@@ -64,6 +64,8 @@
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) =>
     ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const safeUrl = (u) => (/^https?:\/\//i.test(u || "") ? u : "#");
+  // Images may also be files in this repo, e.g. "images/foo.webp".
+  const safeImg = (u) => (/^https?:\/\//i.test(u || "") || /^[\w\/.-]+$/.test(u || "") ? u : "");
 
   function cardHTML(item) {
     const mine = Boolean(myTokens()[item.id]);
@@ -71,7 +73,7 @@
     const cls = ["card", taken && "is-taken", mine && "is-mine"].filter(Boolean).join(" ");
 
     const img = item.image
-      ? `<div class="card-img"><img src="${esc(safeUrl(item.image))}" alt="" loading="lazy"></div>`
+      ? `<div class="card-img"><img src="${esc(safeImg(item.image))}" alt="${esc(item.name)}" loading="lazy"></div>`
       : `<div class="card-img placeholder" aria-hidden="true">🎁</div>`;
 
     const tags = [

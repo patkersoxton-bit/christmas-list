@@ -7,9 +7,12 @@
     "category": "Tech",
     "priority": "normal",
     "links": [
-      { "store": "Amazon", "url": "https://www.amazon.com/dp/B0C783YNW7?th=1" }
+      {
+        "store": "Amazon",
+        "url": "https://www.amazon.com/dp/B0C783YNW7?th=1"
+      }
     ],
-    "image": ""
+    "image": "images/dji-osmo-action-4.webp"
   },
   {
     "id": "lenovo-legion-armored-backpack",
@@ -19,20 +22,26 @@
     "category": "Bags",
     "priority": "normal",
     "links": [
-      { "store": "Amazon", "url": "https://www.amazon.com/dp/B07VVRZ7ZB?th=1" }
+      {
+        "store": "Amazon",
+        "url": "https://www.amazon.com/dp/B07VVRZ7ZB?th=1"
+      }
     ],
-    "image": ""
+    "image": "images/lenovo-legion-armored-backpack.webp"
   },
   {
     "id": "ugreen-kvm-switch",
-    "name": "UGREEN KVM Switch",
-    "description": "Lets two computers share one keyboard, mouse and monitor setup. Please get the exact model in the link.",
+    "name": "UGREEN Dual-Monitor KVM Switch",
+    "description": "Lets two computers share two monitors, a keyboard and a mouse (HDMI, 4K 60Hz) at the press of a button. Please get the exact model in the link.",
     "price": "",
     "category": "Tech",
     "priority": "normal",
     "links": [
-      { "store": "Amazon", "url": "https://www.amazon.com/dp/B0DXF66SWR?psc=1" }
+      {
+        "store": "Amazon",
+        "url": "https://www.amazon.com/dp/B0DXF66SWR?psc=1"
+      }
     ],
-    "image": ""
+    "image": "images/ugreen-kvm-switch.webp"
   }
 ]
