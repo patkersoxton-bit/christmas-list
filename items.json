@@ -1,37 +1,37 @@
 [
   {
-    "id": "wool-socks",
-    "name": "Merino Wool Socks",
-    "description": "Cushioned crew socks, size L. Any neutral color.",
-    "price": "$25",
-    "category": "Clothing",
+    "id": "dji-osmo-action-4",
+    "name": "DJI Osmo Action 4",
+    "description": "DJI's action camera. Please get the exact version in the link.",
+    "price": "",
+    "category": "Tech",
     "priority": "normal",
     "links": [
-      { "store": "Darn Tough", "url": "https://darntough.com/" }
+      { "store": "Amazon", "url": "https://www.amazon.com/dp/B0C783YNW7?th=1" }
     ],
     "image": ""
   },
   {
-    "id": "coffee-beans",
-    "name": "Whole Bean Coffee",
-    "description": "Medium or dark roast, 12 oz bag. Whole bean, not ground.",
-    "price": "$18",
-    "category": "Food & Drink",
+    "id": "lenovo-legion-armored-backpack",
+    "name": "Lenovo Legion Armored Backpack",
+    "description": "Laptop backpack from Lenovo's Legion gaming line.",
+    "price": "",
+    "category": "Bags",
     "priority": "normal",
     "links": [
-      { "store": "Amazon", "url": "https://www.amazon.com/s?k=whole+bean+coffee+medium+roast" }
+      { "store": "Amazon", "url": "https://www.amazon.com/dp/B07VVRZ7ZB?th=1" }
     ],
     "image": ""
   },
   {
-    "id": "paperback-book",
-    "name": "A Good Novel",
-    "description": "Placeholder: swap in a specific title and link.",
-    "price": "$15–20",
-    "category": "Books",
-    "priority": "high",
+    "id": "ugreen-kvm-switch",
+    "name": "UGREEN KVM Switch",
+    "description": "Lets two computers share one keyboard, mouse and monitor setup. Please get the exact model in the link.",
+    "price": "",
+    "category": "Tech",
+    "priority": "normal",
     "links": [
-      { "store": "Bookshop.org", "url": "https://bookshop.org/" }
+      { "store": "Amazon", "url": "https://www.amazon.com/dp/B0DXF66SWR?psc=1" }
     ],
     "image": ""
   }
