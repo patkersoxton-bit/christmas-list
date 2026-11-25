@@ -43,5 +43,20 @@
       }
     ],
     "image": "images/ugreen-kvm-switch.webp"
+  },
+  {
+    "id": "wireless-earbuds",
+    "name": "Wireless Earbuds",
+    "description": "White true-wireless Bluetooth earbuds, as pictured. Please get the exact pair in the Target link.",
+    "price": "",
+    "category": "Tech",
+    "priority": "normal",
+    "links": [
+      {
+        "store": "Target",
+        "url": "https://www.target.com/p/ap2022-true-wireless-bluetooth-headphones/-/A-85978609"
+      }
+    ],
+    "image": "images/wireless-earbuds.webp"
   }
 ]
