@@ -219,3 +219,4 @@ button { font: inherit; cursor: pointer; }
   flex: 1; text-align: center; padding: .65rem 1rem; border-radius: 10px;
   background: #e4e1dc; color: #7d817e; font-weight: 600;
 }
+.nolink { margin: .25rem 0 0; font-size: .85rem; color: var(--muted); font-style: italic; }

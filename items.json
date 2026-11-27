@@ -1,9 +1,9 @@
 [
   {
     "id": "dji-osmo-action-4",
-    "name": "DJI Osmo Action 4",
-    "description": "DJI's action camera. Please get the exact version in the link.",
-    "price": "",
+    "name": "DJI Osmo Action 4 (Standard Combo)",
+    "description": "DJI's action camera, Standard Combo version. Please get the exact version in the link.",
+    "price": "~$180–240",
     "category": "Tech",
     "priority": "normal",
     "links": [
@@ -18,7 +18,7 @@
     "id": "tomtoc-navigator-t71-backpack",
     "name": "tomtoc Navigator-T71 Laptop Backpack (24L)",
     "description": "Water-resistant 24L laptop backpack for work and travel. Black, as pictured. Please get the exact model in the link.",
-    "price": "",
+    "price": "~$90",
     "category": "Bags",
     "priority": "normal",
     "links": [
@@ -33,7 +33,7 @@
     "id": "ugreen-kvm-switch",
     "name": "UGREEN Dual-Monitor KVM Switch",
     "description": "Lets two computers share two monitors, a keyboard and a mouse (HDMI, 4K 60Hz) at the press of a button. Please get the exact model in the link.",
-    "price": "",
+    "price": "~$65–80",
     "category": "Tech",
     "priority": "normal",
     "links": [
@@ -48,7 +48,7 @@
     "id": "wireless-earbuds",
     "name": "Apple AirPods Pro 3",
     "description": "Apple AirPods Pro (3rd generation). Please get the exact pair in the Target link.",
-    "price": "",
+    "price": "~$150–250",
     "category": "Tech",
     "priority": "normal",
     "links": [
@@ -58,5 +58,64 @@
       }
     ],
     "image": "images/wireless-earbuds.webp"
+  },
+  {
+    "id": "damero-pilot-headset-bag",
+    "name": "Damero Pilot Headset Bag (Flight Bag)",
+    "description": "Padded flight bag that keeps an aviation headset protected, with room for a kneeboard, iPad, sunglasses and other small gear.",
+    "price": "~$50",
+    "category": "Aviation",
+    "priority": "normal",
+    "emoji": "✈️",
+    "links": [
+      {
+        "store": "Amazon",
+        "url": "https://www.amazon.com/dp/B0DM83K39V"
+      }
+    ],
+    "image": ""
+  },
+  {
+    "id": "tcgplayer-gift-card",
+    "name": "TCGplayer Gift Card",
+    "description": "Gift card for TCGplayer, the trading card marketplace. Any amount.",
+    "price": "Any amount",
+    "category": "Gift Cards",
+    "priority": "normal",
+    "emoji": "🃏",
+    "links": [
+      {
+        "store": "TCGplayer",
+        "url": "https://www.tcgplayer.com/giftcard"
+      }
+    ],
+    "image": ""
+  },
+  {
+    "id": "osrs-membership-card-25",
+    "name": "Old School RuneScape Membership Card ($25)",
+    "description": "$25 RuneScape card for an OSRS membership. Delivered by email, so it's an easy last-minute gift.",
+    "price": "$25",
+    "category": "Gaming",
+    "priority": "normal",
+    "emoji": "⚔️",
+    "links": [
+      {
+        "store": "Walmart",
+        "url": "https://www.walmart.com/ip/21310095"
+      }
+    ],
+    "image": ""
+  },
+  {
+    "id": "black-crew-socks-size-13",
+    "name": "Big Pack of Black Crew Socks (Size 13)",
+    "description": "Black crew socks in size 13. Any brand, and the bigger the pack the better.",
+    "price": "",
+    "category": "Clothing",
+    "priority": "normal",
+    "emoji": "🧦",
+    "links": [],
+    "image": ""
   }
 ]

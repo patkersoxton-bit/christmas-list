@@ -74,7 +74,7 @@
 
     const img = item.image
       ? `<div class="card-img"><img src="${esc(safeImg(item.image))}" alt="${esc(item.name)}" loading="lazy"></div>`
-      : `<div class="card-img placeholder" aria-hidden="true">🎁</div>`;
+      : `<div class="card-img placeholder" aria-hidden="true">${esc(item.emoji || "🎁")}</div>`;
 
     const tags = [
       item.priority === "high" ? `<span class="tag top">★ Top pick</span>` : "",
@@ -102,7 +102,7 @@
         <h3>${esc(item.name)}</h3>
         ${item.price ? `<div class="price">${esc(item.price)}</div>` : ""}
         ${item.description ? `<p class="desc">${esc(item.description)}</p>` : ""}
-        ${links ? `<div class="links">${links}</div>` : ""}
+        ${links ? `<div class="links">${links}</div>` : `<p class="nolink">No specific store. Any brand that fits works.</p>`}
         <div class="actions">${action}</div>
       </div>
     </article>`;

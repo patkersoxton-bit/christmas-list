@@ -42,6 +42,8 @@ Each item in `items.json` looks like this:
 - `links`: one or more exact purchase links. Each becomes a "Buy at …" button.
 - `image`: optional. Either a full image URL or a file in `images/` (e.g. `"images/wool-socks.webp"`). Leave it empty for a 🎁 placeholder.
 - `"hidden": true`: optionally hide an item without deleting it.
+- `emoji`: optional icon shown when there's no `image` (default 🎁).
+- `links`: may be empty (`[]`) for "any brand" items. The card then says so.
 
 ## Who can see what
 
